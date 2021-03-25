@@ -1,0 +1,19 @@
+---
+title: "step2_md"
+output: html_document
+---
+
+## 연습데이터 설명
+링크 : <https://www.dropbox.com/sh/xx1w2syi768kfu0/AACZgxgo1fcxyDMgv9U-iTz8a?dl=0>
+
+### 변수 설명
+* satisfaction_level : 직무 만족도
+* last_evaluation : 마지막 평가점수
+* number_project : 진행 프로젝트 수
+* average_monthly_hours : 월평균 근무시간
+* time_spend_company : 근속년수
+* work_accident : 사건사고 여부(0: 없음, 1: 있음, 명목형)
+* left : 이직 여부(0: 잔류, 1: 이직, 명목형)
+* promotion_last_5years: 최근 5년간 승진여부(0: 승진 x, 1: 승진, 명목형)
+* sales : 부서
+* salary : 임금 수준
