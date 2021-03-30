@@ -22,3 +22,17 @@ HR$left
 HR$satisfaction_level_group_1 = ifelse(HR$satisfaction_level > 0.5, 'High', 'Low')
 HR$satisfaction_level_group_1 = as.factor(HR$satisfaction_level_group_1)
 summary(HR$satisfaction_level_group_1)
+
+# 조건이 추가가 되었을 경우에는 ifeles문 안에 ifelse문을 쓰면 된다.
+HR$satisfaction_level_group_2 = ifelse(HR$satisfaction_level > 0.8,'High',
+                                       ifelse(HR$satisfaction_level > 0.5, 'Mid', 'Low'))
+HR$satisfaction_level_group_2 = as.factor(HR$satisfaction_level_group_2)
+summary(HR$satisfaction_level_group_2)
+
+# 조건에 맞는 데이터 추출 subset
+# subset(데이터, 추출 조건)
+HR_High = subset(HR, salary=='high')
+summary(HR_High$salary)
+
+HR_High_IT = subset(HR, salary == 'high' & last_evaluation > 0.5)
+print(xtabs(~ HR_High_IT$last_evaluation + HR_High_IT$salary))
