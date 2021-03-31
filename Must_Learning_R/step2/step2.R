@@ -36,3 +36,14 @@ summary(HR_High$salary)
 
 HR_High_IT = subset(HR, salary == 'high' & last_evaluation > 0.5)
 print(xtabs(~ HR_High_IT$last_evaluation + HR_High_IT$salary))
+
+# 집계된 데이터 만들기
+# 패키지 설치
+install.packages("plyr") # 엑셀의 피벗테이블 같은 용도
+library(plyr)
+# ddply(데이터, 집계기준, summarise, 요약 변수)
+SS = ddply(HR, # SS라는 데이터 셋을 생성
+           c("sales", "salary"), summarise,
+           M_SF = mean(satisfaction_level1),
+           COUNT = length(sales),
+           M_WH = round(mean(average)))
